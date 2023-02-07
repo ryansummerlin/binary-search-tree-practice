@@ -92,12 +92,44 @@ class BinarySearchTree {
 
     // Breadth First Traversal - Iterative
   breadthFirstTraversal() {
-    // your code here
+    let queue = [this.root];
+    let currentNode;
+
+    while (queue.length > 0) {
+      currentNode = queue[0];
+      console.log(currentNode.val);
+      queue.shift();
+
+      if (currentNode.left !== null) {
+        queue.push(currentNode.left);
+      }
+
+      if (currentNode.right !== null) {
+        queue.push(currentNode.right);
+      }
+
+    }
   }
 
   // Depth First Traversal - Iterative
   depthFirstTraversal() {
-    // your code here
+    let stack = [this.root];
+    let currentNode;
+
+    while (stack.length > 0) {
+      currentNode = stack[0];
+      console.log(currentNode.val);
+      stack.shift();
+
+      if (currentNode.left !== null) {
+        stack.unshift(currentNode.left);
+      }
+
+      if (currentNode.right !== null) {
+        stack.unshift(currentNode.right);
+      }
+
+    }
 }
 }
 
